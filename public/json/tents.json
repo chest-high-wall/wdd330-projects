@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "cedar-ridge-rimrock-2",
+    "Name": "Cedar Ridge Rimrock 2",
+    "Image": "/images/tents/noun_Tent_2517.svg",
+    "Price": 149.99,
+    "Description": "A rugged 2-person tent for all your outdoor needs."
+  },
+  {
+    "Id": "northface-alpine-3",
+    "Name": "Northface Alpine 3",
+    "Image": "/images/tents/noun_Tent_2517.svg",
+    "Price": 229.99,
+    "Description": "High-quality alpine tent for 3 people."
+  },
+  {
+    "Id": "northface-talus-4",
+    "Name": "Northface Talus 4",
+    "Image": "/images/tents/noun_Tent_2517.svg",
+    "Price": 249.99,
+    "Description": "Comfortable and durable 4-person tent."
+  },
+  {
+    "Id": "marmot-ajax-3",
+    "Name": "Marmot Ajax 3",
+    "Image": "/images/tents/noun_Tent_2517.svg",
+    "Price": 199.99,
+    "Description": "Spacious 3-person tent from Marmot."
+  }
+]

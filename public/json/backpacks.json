@@ -1,0 +1,16 @@
+[
+  {
+    "id": "granite-gear-crown-2",
+    "name": "Granite Gear Crown 2",
+    "image": "/images/backpacks/granite-gear-crown-2.jpg",
+    "description": "Ultralight pack for long-distance backpacking.",
+    "price": 219.99
+  },
+  {
+    "id": "osprey-atmos-ag-65",
+    "name": "Osprey Atmos AG 65",
+    "image": "/images/backpacks/osprey-atmos-ag-65.jpg",
+    "description": "Award-winning suspension system for heavy loads.",
+    "price": 329.99
+  }
+]

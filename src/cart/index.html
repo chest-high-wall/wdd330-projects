@@ -8,22 +8,8 @@
   </head>
 
   <body>
-    <header class="divider">
-      <div class="logo">
-        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
-        <a href="/index.html">
-          Sleep <span class="highlight">Outside</span>
-        </a>
-      </div>
-
-      <div class="cart">
-        <a href="/cart/">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <!-- cart icon path -->
-          </svg>
-        </a>
-      </div>
-    </header>
+    
+    <header id="main-header" class="divider"></header>
 
     <main class="divider">
       <section class="products">
@@ -31,11 +17,16 @@
       </section>
     </main>
 
-    <footer>
-      &copy;2025 ⛺ SleepOutside ⛺ WDD 330 ⛺ BYU-Idaho for BYU-Pathway Worldwide Online
-    </footer>
+    
+    <footer id="main-footer"></footer>
 
-    <!-- JS for Cart -->
+    
     <script type="module" src="/js/cart.js"></script>
+
+    
+    <script type="module">
+      import { loadHeaderFooter } from '/js/utils.mjs';
+      loadHeaderFooter();
+    </script>
   </body>
 </html>

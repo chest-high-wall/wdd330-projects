@@ -7,14 +7,15 @@
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-  <header>
-    <img src="/images/logos/noun_Tent_2517.svg" alt="tent image for logo">
-    <h1><a href="/">SleepOutside</a></h1>
-  </header>
+  
+  <header id="main-header" class="divider"></header>
 
   <main>
     <div id="product-list"></div>
   </main>
+
+  
+  <footer id="main-footer"></footer>
 
   <template id="product-card-template">
     <div class="product-card">
@@ -27,5 +28,11 @@
   </template>
 
   <script type="module" src="../js/main.js"></script>
+
+  
+  <script type="module">
+    import { loadHeaderFooter } from '../js/utils.mjs';
+    loadHeaderFooter();
+  </script>
 </body>
 </html>

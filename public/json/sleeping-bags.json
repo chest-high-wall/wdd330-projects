@@ -1,0 +1,16 @@
+[
+  {
+    "id": "nemo-forte-20",
+    "name": "NEMO Forte 20",
+    "image": "/images/sleepingbags/nemo-forte-20.jpg",
+    "description": "Roomy mummy bag for side sleepers, rated to 20°F.",
+    "price": 179.95
+  },
+  {
+    "id": "marmot-trestles-15",
+    "name": "Marmot Trestles 15",
+    "image": "/images/sleepingbags/marmot-trestles-15.jpg",
+    "description": "Synthetic sleeping bag for cold weather camping.",
+    "price": 119.00
+  }
+]

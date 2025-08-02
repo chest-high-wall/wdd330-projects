@@ -1,47 +1,32 @@
 // src/js/utils.mjs
 
-// Render a list of items using a template
 export function renderListWithTemplate(template, parentElement, list, callback) {
   list.forEach(item => {
     const clone = template.content.cloneNode(true);
-    const readyTemplate = callback(clone, item);
-    parentElement.appendChild(readyTemplate);
+    const customizedClone = callback(clone, item);
+    parentElement.appendChild(customizedClone);
   });
 }
 
-// Get data from localStorage
-export function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+export function getParam(paramName) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(paramName);
 }
 
-// Set data in localStorage
-export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
+export function loadHeaderFooter() {
+  const headerElement = document.getElementById("main-header");
+  const footerElement = document.getElementById("main-footer");
 
-// Load an HTML file from a given path and return its contents
-export async function loadTemplate(path) {
-  const res = await fetch(path);
-  const template = await res.text();
-  return template;
-}
+  fetch("/partials/header.html")
+    .then(response => response.text())
+    .then(data => {
+      headerElement.innerHTML = data;
+    });
 
-// Render a single template into a DOM element
-export function renderWithTemplate(template, parentElement, data, callback) {
-  parentElement.innerHTML = template;
-  if (callback) {
-    callback(data);
-  }
-}
-
-// Load header and footer partials and inject them into the page
-export async function loadHeaderFooter() {
-  const header = await loadTemplate('/public/partials/header.html');
-  const footer = await loadTemplate('/public/partials/footer.html');
-
-  const headerEl = document.getElementById('main-header');
-  const footerEl = document.getElementById('main-footer');
-
-  renderWithTemplate(header, headerEl);
-  renderWithTemplate(footer, footerEl);
+  fetch("/partials/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      footerElement.innerHTML = data;
+    });
 }

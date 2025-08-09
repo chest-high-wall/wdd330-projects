@@ -1,35 +1,28 @@
-// src/js/ProductList.mjs
-
-import ExternalServices from "./ExternalServices.mjs";
-import { renderListWithTemplate } from "./utils.mjs";
+import { renderListWithTemplate } from './utils.mjs';
 
 export default class ProductList {
-  constructor(category, cardSelector, listElementId) {
+  constructor(category, dataSource, listElement) {
     this.category = category;
-    this.cardTemplate = document.querySelector(cardSelector);
-    this.listElement = document.getElementById(listElementId);
-    this.dataSource = new ExternalServices(category);
+    this.dataSource = dataSource;
+    this.listElement = listElement;
   }
 
   async init() {
-    const list = await this.dataSource.getData();
+    const list = await this.dataSource.getData(this.category);
     this.renderList(list);
   }
 
-  prepareTemplate(template, product) {
-    template.querySelector(".product-link").href = `/product_pages/index.html?product=${product.Id}`;
-    template.querySelector(".product-image").src = product.Image;
-    template.querySelector(".product-name").textContent = product.Name;
-    template.querySelector(".product-price").textContent = `$${product.Price}`;
-    return template;
+  renderList(list) {
+    const template = document.querySelector('template.product-card');
+    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate.bind(this));
   }
 
-  renderList(list) {
-    renderListWithTemplate(
-      this.cardTemplate,
-      this.listElement,
-      list,
-      this.prepareTemplate.bind(this)
-    );
+  prepareTemplate(template, product) {
+    template.querySelector('.product-link').href += product.Id;
+    template.querySelector('.product-name').textContent = product.Name;
+    template.querySelector('.product-image').src = `/images/${this.category}/${product.Image}`;
+    template.querySelector('.product-image').alt = `Image of ${product.Name}`;
+    template.querySelector('.product-price').textContent = `$${product.Price}`;
+    return template;
   }
 }

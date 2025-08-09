@@ -1,17 +1,12 @@
 export default class ProductData {
-  constructor(category) {
-    this.category = category;
-    this.path = `/json/${category}.json`;
-  }
-
-  async getData() {
-    try {
-      const response = await fetch(this.path);
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      console.error("Failed to fetch data:", err);
+  async getData(category) {
+    // ✅ Correct path: /json/tents.json, /json/sleeping-bags.json, etc.
+    const response = await fetch(`/json/${category}.json`);
+    if (!response.ok) {
+      console.error('Failed to fetch products:', response.status, response.statusText);
       return [];
     }
+    const data = await response.json();
+    return data;
   }
 }

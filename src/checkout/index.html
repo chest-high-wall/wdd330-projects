@@ -8,26 +8,56 @@
   </head>
 
   <body>
-    <!-- 🔁 Dynamic header will load here -->
+    
     <header id="main-header" class="divider"></header>
 
     <main class="divider">
+      
       <section class="products">
         <h2>Review & Place your Order</h2>
-        <!-- Order review content or dynamic JS injection will go here -->
+      </section>
+
+      
+      <section class="checkout-form">
+        <h3>Shipping & Contact</h3>
+        <form id="checkoutForm" novalidate>
+          <label>First Name
+            <input id="fname" name="fname" type="text" required />
+          </label>
+
+          <label>Last Name
+            <input id="lname" name="lname" type="text" required />
+          </label>
+
+          <label>Email
+            <input id="email" name="email" type="email" required />
+          </label>
+
+          <label>Address
+            <input id="address" name="address" type="text" required />
+          </label>
+
+          <label>City
+            <input id="city" name="city" type="text" required />
+          </label>
+
+          <label>State
+            <input id="state" name="state" type="text" required />
+          </label>
+
+          <label>Zip
+            <input id="zip" name="zip" type="text" pattern="\d{5}" required />
+          </label>
+
+          <button id="checkoutSubmit" type="submit">Place Order</button>
+        </form>
       </section>
     </main>
 
-    <!-- 🔁 Dynamic footer will load here -->
+    
     <footer id="main-footer"></footer>
 
-    <!-- JS for Checkout -->
+    
     <script type="module" src="/js/checkout.js"></script>
-
-    <!-- Load dynamic header/footer -->
-    <script type="module">
-      import { loadHeaderFooter } from '/js/utils.mjs';
-      loadHeaderFooter();
-    </script>
   </body>
 </html>
